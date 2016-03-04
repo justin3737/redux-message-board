@@ -1,6 +1,6 @@
 import * as types from '../constants/ActionTypes';
 
-export const getNowTime = () => {
+const getNowTime = () => {
     var date = new Date();
     var str = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     return str;
@@ -12,7 +12,7 @@ const list = (state, action) => {
             return {
                 id     : action.id,
                 message: action.message,
-                user   : action.user.toUpperCase(),
+                user_id: action.user.toUpperCase(),
                 time   : getNowTime()
             };
         default:
@@ -27,6 +27,10 @@ const lists = (state = [], action) => {
         		...state,
         		list(undefined, action)
         	];
+        case types.DEL_LIST:
+            return state.filter(()=> {
+                return action.id !== state.id;
+            });
         default:
             return state;
     };

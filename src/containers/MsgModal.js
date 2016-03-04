@@ -25,8 +25,8 @@ class MsgModal extends Component {
         toggleModal(false);
     }
     _handleCancel = () => {
-        this.props.toggleModal(false);
-        this.props.updateMsg("");
+        const { toggleModal } = this.props;
+        toggleModal(false);
     }
     render() {
         const FormItem = Form.Item;

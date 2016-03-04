@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ListItems from '../components/ListItems';
 
 export default class List extends Component {
     constructor() {
@@ -8,27 +9,7 @@ export default class List extends Component {
         return (
             <div className="container">
                 <div className="listWrap">
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    ---------
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
-                    list<p/>
+                    <ListItems />
                 </div>
             </div>
         );

@@ -12,6 +12,23 @@ export const addList = (message, user) => {
     };
 };
 
+/* List: 刪除留言 */
+export const delList = (id) => {
+    return {
+        type: types.DEL_LIST,
+        id
+    };
+};
+
+/* List: 編輯留言 */
+export const editList = (id, message) => {
+    return {
+        type: types.EDIT_LIST,
+        id,
+        message
+    };
+};
+
 /* Modal: 更改 user 名稱 */
 export const updateUser = (user) => {
     return {
