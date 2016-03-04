@@ -1,7 +1,9 @@
-react-redux-boilerplate
+redux-message-board
 =====================
 
-The minimal dev environment to enable live-editing React components.
+This practice for learning React components and Redux data flow.
+
+use anti-design UI components: https://github.com/ant-design/ant-design
 
 ### Usage
 
@@ -9,21 +11,4 @@ The minimal dev environment to enable live-editing React components.
 npm install
 npm start
 open http://localhost:3000
-```
-
-Now edit `src/app.js`.  
-Your changes will appear without reloading the browser like in [this video](http://vimeo.com/100010922).
-
-### Linting
-
-This boilerplate project includes React-friendly ESLint configuration.
-
-```
-npm run lint
-```
-
-### Testing
-
-```
-npm run test
 ```
