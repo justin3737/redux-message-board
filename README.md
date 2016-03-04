@@ -3,7 +3,9 @@ redux-message-board
 
 This practice for learning React components and Redux data flow.
 
-use anti-design UI components: https://github.com/ant-design/ant-design
+### Features
+- Anti Design UI components [Anti Design UI](https://github.com/ant-design/ant-design/).
+- npm + webpack + babel + React + Redux + ES6.
 
 ### Usage
 
