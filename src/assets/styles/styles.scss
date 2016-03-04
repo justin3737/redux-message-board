@@ -7,7 +7,7 @@
 
 body {
     background-color: #000;
-    background-image: url("../assets/images/bg.jpg");
+    background-image: url("../images/bg.jpg");
     background-size : cover;
     font-family     : arial, "微軟正黑體", 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
 }
@@ -49,3 +49,10 @@ header {
        -moz-box-sizing: border-box;
         -ms-box-sizing: border-box;
 }
+    
+    .listWrap {
+        position  : absolute;
+        width     : inherit;
+        overflow  : hidden;
+        color     : #333;
+    }

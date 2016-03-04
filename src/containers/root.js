@@ -1,4 +1,4 @@
-import './root.scss';
+import '../assets/styles/styles.scss';
 import React, { Component } from 'react';
 import Header   from './Header';
 import List     from './List';
