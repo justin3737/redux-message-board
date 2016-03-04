@@ -1,0 +1,51 @@
+﻿$WIDTH: 500px;
+
+* {
+    margin : 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+    background-image: url("../assets/images/bg.jpg");
+    background-size : cover;
+    font-family     : arial, "微軟正黑體", 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
+}
+
+#root {
+    height  : 100%;
+    overflow: hidden;
+}
+
+header {
+    position   : relative;
+    top        : 0;
+    left       : 50%;
+    margin-left: -($WIDTH/2);
+    width      : $WIDTH;
+    height     : 50px;
+    position   : fixed;
+    background : rgba(255,255,255,0.35);
+    text-align : center;
+    font-size  : 25px;
+    line-height: 50px;
+}
+    .openModalBtn {
+        position: absolute;
+        right   : 20px;
+        top     : 10px;
+    }
+
+.container {
+    width      : $WIDTH;
+    height     : 100%;
+    position   : relative;
+    margin     : 0 auto;
+    margin-top : 50px; 
+    overflow-y : scroll;
+    background : rgba(255,255,255,0.3);
+    box-sizing : border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+}
