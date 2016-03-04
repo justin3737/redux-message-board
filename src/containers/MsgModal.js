@@ -46,12 +46,19 @@ class MsgModal extends Component {
                             <FormItem
                                 {...formItemLayout}
                                 label="使用者名稱：">
-                                <Input placeholder="User Name" {...this.props} value={user} onChange={this._onChange().user}/>
+                                <Input 
+                                    placeholder="User Name" 
+                                    value={user} 
+                                    onChange={this._onChange().user}/>
                             </FormItem>
                             <FormItem
                                 {...formItemLayout}
                                 label="留言內容：">
-                                <Input type="textarea" placeholder="Message" {...this.props} value={message} onChange={this._onChange().message}/>
+                                <Input 
+                                    type="textarea" 
+                                    placeholder="Message" 
+                                    value={message} 
+                                    onChange={this._onChange().message} />
                             </FormItem>
                         </Form>
                 </Modal>
