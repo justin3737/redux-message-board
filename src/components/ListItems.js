@@ -5,7 +5,7 @@ class ListItems extends Component {
     constructor() {
         super();
     }
-    _onDel = (e) => {
+    _onDel = () => {
         const { onDel, id } = this.props;
         onDel(id);
     }
@@ -14,7 +14,7 @@ class ListItems extends Component {
         return classNames('itemWrap', ((user_id === curr_user) ? 'is-my-msg' : ''));
     }
     render() {
-        const { id, user, message, time, onDel } = this.props;
+        const { id, user, message, time } = this.props;
         return (
             <li className={ this._setClassName() }>
                 <div className="item-tools">
