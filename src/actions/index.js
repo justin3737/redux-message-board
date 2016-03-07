@@ -1,12 +1,9 @@
 import * as types from '../constants/ActionTypes';
 
-let listId = 0;
-
 /* List: 加入留言列表 */
 export const addList = (message, user) => {
     return {
         type: types.ADD_LIST,
-        id  : listId++,
         message,
         user
     };

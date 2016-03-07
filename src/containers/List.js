@@ -1,11 +1,24 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Modal } from 'antd';
 import ListItems from '../components/ListItems';
+import { delList } from '../actions';
 
 class List extends Component {
     constructor() {
         super();
+    }
+    _onDel = (id) => {
+        const confirm = Modal.confirm;
+        const { delList } = this.props;
+        confirm({
+            title: '您是否確認要刪除留言?' ,
+            onOk() {
+                delList(id);
+            },
+            onCancel() {}
+        });
     }
     render() {
         const { lists, modals } = this.props;
@@ -19,6 +32,7 @@ class List extends Component {
                                     key={info.id}
                                     {...info}
                                     curr_user={modals.user_id}
+                                    onDel={this._onDel}
                                 />
                             )
                         }
@@ -44,5 +58,8 @@ export default connect(
     state => ({
         lists : state.lists,
         modals: state.modals
-    }),{}
+    }),
+    dispatch => bindActionCreators({
+        delList
+    }, dispatch)
 )(List);

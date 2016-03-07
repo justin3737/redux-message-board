@@ -1,5 +1,7 @@
 import * as types from '../constants/ActionTypes';
 
+let listId = 1;
+
 const getNowTime = () => {
     var date = new Date();
     var str = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
@@ -10,7 +12,7 @@ const list = (state, action) => {
     switch (action.type) {
         case types.ADD_LIST:
             return {
-                id     : action.id,
+                id     : listId++,
                 message: action.message,
                 user   : action.user,
                 user_id: action.user.toUpperCase(),
@@ -29,8 +31,8 @@ const lists = (state = [], action) => {
         		list(undefined, action)
         	];
         case types.DEL_LIST:
-            return state.filter(()=> {
-                return action.id !== state.id;
+            return state.filter((list)=> {
+                return action.id !== list.id;
             });
         default:
             return state;

@@ -5,19 +5,22 @@ class ListItems extends Component {
     constructor() {
         super();
     }
-    _setListCSS = () => {
+    _onDel = (e) => {
+        const { onDel, id } = this.props;
+        onDel(id);
+    }
+    _setClassName = () => {
         const { user_id, curr_user } = this.props;
-        let isMyMsg = (user_id === curr_user)? 'is-my-msg': '';
-        return classNames('itemWrap', isMyMsg);
+        return classNames('itemWrap', ((user_id === curr_user) ? 'is-my-msg' : ''));
     }
     render() {
-        const { id, user, message, time } = this.props;
+        const { id, user, message, time, onDel } = this.props;
         return (
-            <li className={ this._setListCSS() }>
+            <li className={ this._setClassName() }>
                 <div className="item-tools">
-                    <button className="button del">X</button>
+                    <button className="button del" onClick={this._onDel}>X</button>
                 </div>
-                <div className="item-id"># {id+1}
+                <div className="item-id"># {id}
                     <span className="item-user-name">{user}</span> : 
                 </div>
                 <div className="item-msg">{message}</div>
@@ -33,7 +36,8 @@ ListItems.propTypes = {
     user_id  : PropTypes.string.isRequired,
     time     : PropTypes.string.isRequired,
     message  : PropTypes.string.isRequired,
-    curr_user: PropTypes.string.isRequired
+    curr_user: PropTypes.string.isRequired,
+    onDel    : PropTypes.func.isRequired
 };
 
 export default ListItems;
