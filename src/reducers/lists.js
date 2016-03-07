@@ -12,6 +12,7 @@ const list = (state, action) => {
             return {
                 id     : action.id,
                 message: action.message,
+                user   : action.user,
                 user_id: action.user.toUpperCase(),
                 time   : getNowTime()
             };

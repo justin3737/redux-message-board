@@ -3,7 +3,8 @@ import * as types from '../constants/ActionTypes';
 let initialState = {
     visible: false,
     message: '',
-    user   : ''
+    user   : '',
+    user_id: ''
 };
 
 const modals = (state = initialState, action) => {
@@ -16,7 +17,8 @@ const modals = (state = initialState, action) => {
         case types.UPDATE_USER:
             return {
                 ...state,
-                user: action.user
+                user   : action.user,
+                user_id: action.user.toUpperCase()
             };
         case types.UPDATE_MESSAGE:
             return {

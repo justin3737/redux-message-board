@@ -1,4 +1,4 @@
-﻿$WIDTH: 500px;
+﻿$WIDTH: 520px;
 
 * {
     margin : 0;
@@ -9,7 +9,7 @@ body {
     background-color: #000;
     background-image: url("../images/bg.jpg");
     background-size : cover;
-    font-family     : arial, "微軟正黑體", 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
+    font-family     : arial, '微軟正黑體','Hiragino Sans GB', sans-serif;
 }
 
 #root {
@@ -29,6 +29,10 @@ header {
     text-align : center;
     font-size  : 25px;
     line-height: 50px;
+
+    .h1 {
+        color : #ff0066;
+    }
 }
     .openModalBtn {
         position: absolute;
@@ -56,3 +60,64 @@ header {
         overflow  : hidden;
         color     : #333;
     }
+
+    .list-ul {
+        padding-bottom: 50px;
+    }
+
+    .itemWrap {
+        position     : relative;
+        margin       : 10px;
+        padding      : 15px;
+        height       : auto;
+        background   : rgba(255,255,255,0.2);
+        list-style   : none;
+        border-radius: 5px;
+        -webkit-box-border-radius: 5px;
+           -moz-box-border-radius: 5px;
+            -ms-box-border-radius: 5px;
+
+        &.is-my-msg .item-tools{
+            display: block;
+        }
+    }
+        .item-tools {
+            display : none;
+            position: absolute;
+            width   : 100%;
+            right   : 10px;
+
+            .button {
+                float       : right;
+                margin-right: 5px;
+                width       : 30px;
+                height      : 30px;
+                font-size   : 12px;
+                text-align  : center;
+                background  : rgba(255,255,255,0.3); 
+                border      : 0;
+
+                &:hover {
+                    cursor    :pointer;
+                    background: rgba(255,102,204,0.3); 
+                }
+            }
+        }
+
+        .item-user-name {
+            padding-left: 10px;
+            font-size   : 18px;
+            font-weight : bold;
+            color       : #ff3399;
+        }
+
+        .item-msg {
+            margin-top: 5px;
+            font-size :15px;
+        }
+
+        .item-time {
+            font-size : 12px;
+            color     : #666;
+            text-align: right;
+        }

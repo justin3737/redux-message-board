@@ -16,7 +16,7 @@ class Header extends Component {
     render() {
         return (
             <header className="header">
-                MessageBoard
+                <div className="h1">MessageBoard</div>
                 <Button type="primary" className="openModalBtn" onClick={this._openModal}>留言</Button>
             </header>
         )
