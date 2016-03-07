@@ -14,3 +14,4 @@ npm install
 npm start
 open http://localhost:3000
 ```
+![image](https://raw.githubusercontent.com/justin3737/redux-message-board/master/src/assets/images/demo.png)
