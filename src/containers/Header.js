@@ -31,6 +31,6 @@ export default connect(
     }),
     dispatch => bindActionCreators({
         updateMsg,
-        toggleModal     /* 加入 toggleModal 的  actions  */
+        toggleModal
     }, dispatch)
 )(Header);
