@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { updateMsg, updateUser, addList } from '../actions';
+import { updateMsg, updateUser, addList, toggleModal } from '../actions';
 import { Modal, Form, Input } from 'antd';
 
 class MsgModal extends Component {
@@ -77,6 +77,7 @@ export default connect(
     dispatch => bindActionCreators({
         updateMsg,
         updateUser,
+        toggleModal,
         addList
     }, dispatch)
 )(MsgModal);
