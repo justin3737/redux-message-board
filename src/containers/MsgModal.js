@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { updateMsg, updateUser, toggleModal, addList } from '../actions';
+import { updateMsg, updateUser, addList } from '../actions';
 import { Modal, Form, Input } from 'antd';
 
 class MsgModal extends Component {
@@ -20,13 +20,14 @@ class MsgModal extends Component {
         };
     }
     _handleOk = () => {
-        const { user, message, addList, toggleModal } = this.props;
+        const { user, message, addList } = this.props;
         addList(message, user);
-        toggleModal(false);
+        /* practice: 送出留言以後關閉 modal */
+
     }
     _handleCancel = () => {
-        const { toggleModal } = this.props;
-        toggleModal(false);
+        /* practice：關閉 modal */
+
     }
     render() {
         const FormItem = Form.Item;
@@ -76,7 +77,6 @@ export default connect(
     dispatch => bindActionCreators({
         updateMsg,
         updateUser,
-        toggleModal,
         addList
     }, dispatch)
 )(MsgModal);
