@@ -3,8 +3,7 @@ import * as types from '../constants/ActionTypes';
 let initialState = {
     visible: false,
     message: '',
-    user   : '',
-    user_id: ''
+    user   : ''
 };
 
 const modals = (state = initialState, action) => {
