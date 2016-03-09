@@ -31,9 +31,7 @@ const lists = (state = [], action) => {
         		list(undefined, action)
         	];
         case types.DEL_LIST:
-            return state.filter((list)=> {
-                return action.id !== list.id;
-            });
+            return state;
         default:
             return state;
     };
