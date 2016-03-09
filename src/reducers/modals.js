@@ -15,16 +15,9 @@ const modals = (state = initialState, action) => {
                 visible: action.visible
             };
         case types.UPDATE_USER:
-            return {
-                ...state,
-                user   : action.user,
-                user_id: action.user.toUpperCase()
-            };
+            return state;
         case types.UPDATE_MESSAGE:
-            return {
-                ...state,
-                message: action.message
-            };
+            return state;
         default:
             return state;
     };

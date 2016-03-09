@@ -29,8 +29,8 @@ export const editList = (id, message) => {
 /* Modal: 更改 user 名稱 */
 export const updateUser = (user) => {
     return {
-		type : types.UPDATE_USER,
-		user,
+        type : types.UPDATE_USER,
+        user,
     };
 };
 
