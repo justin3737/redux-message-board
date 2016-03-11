@@ -8,32 +8,24 @@ const getNowTime = () => {
     return str;
 };
 
-const list = (state, action) => {
+const lists = (state = {}, action) => {
     switch (action.type) {
         case types.ADD_LIST:
-            return {
-                id     : listId++,
-                message: action.message,
-                user   : action.user,
-                user_id: action.user.toUpperCase(),
-                time   : getNowTime()
-            };
-        default:
-            return state;
-    };
-};
-
-const lists = (state = [], action) => {
-    switch (action.type) {
-        case types.ADD_LIST:
-        	return [
+            const id = listId++;
+        	return {
         		...state,
-        		list(undefined, action)
-        	];
+        		[id] : {
+                    id,
+                    message: action.message,
+                    user   : action.user,
+                    user_id: action.user.toUpperCase(),
+                    time   : getNowTime()
+                }
+        	};
         case types.DEL_LIST:
-            return state.filter((list)=> {
-                return action.id !== list.id;
-            });
+            const newState = Object.assign({}, state);
+            delete newState[action.id];
+            return newState;
         default:
             return state;
     };

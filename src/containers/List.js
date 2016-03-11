@@ -27,31 +27,21 @@ class List extends Component {
                 <div className="listWrap">
                     <ul className="list-ul">
                         {
-                            lists.map(info =>
-                                <ListItems 
-                                    key={info.id}
-                                    {...info}
-                                    curr_user={modals.user_id}
-                                    onDel={this._onDel}
-                                />
-                            )
+                            Object.keys(lists).map(key => {
+                                return (
+                                    <ListItems 
+                                        key={key}
+                                        {...lists[key]}
+                                        curr_user={modals.user_id}
+                                        onDel={this._onDel}
+                                />)
+                            })
                         }
                      </ul>
                 </div>
             </div>
         );
     };
-};
-
-
-List.propTypes = {
-    lists: PropTypes.arrayOf(PropTypes.shape({
-        id     : PropTypes.number.isRequired,
-        user   : PropTypes.string.isRequired,
-        user_id: PropTypes.string.isRequired,
-        time   : PropTypes.string.isRequired,
-        message: PropTypes.string.isRequired
-    }).isRequired).isRequired
 };
 
 export default connect(
